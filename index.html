@@ -81,7 +81,7 @@
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 96px; overflow-x: clip; }
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; overflow-x: clip; }
   body {
     margin: 0;
     background: var(--bg);
@@ -121,13 +121,9 @@
 
   /* Header: Logo mittig, Navigation links und rechts */
   .site-header {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(252,252,251,.92);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent;
-    transition: border-color .3s;
+    position: relative; z-index: 50;
+    background: var(--bg);
   }
-  .site-header.is-stuck { border-bottom-color: var(--line); }
   .header-grid {
     max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter);
     height: 76px;
@@ -147,7 +143,6 @@
     transition: transform .4s var(--ease);
   }
   .logo img { width: 112px; }
-  .site-header.is-stuck .logo { transform: scale(.62) translateY(-30px); }
   .menu-toggle { display: none; background: none; border: 0; padding: 10px; cursor: pointer; justify-self: end; }
   .menu-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); margin: 6px 0; transition: transform .3s var(--ease), opacity .2s; }
   .mobile-nav { display: none; }
@@ -167,7 +162,7 @@
 
   /* Unterrichtskonzept: Sticky-Bild + Bausteine */
   .concept .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); }
-  .concept-media { position: sticky; top: 110px; align-self: start; }
+  .concept-media { position: sticky; top: 32px; align-self: start; }
   .concept-media img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; filter: grayscale(1) contrast(1.04); }
   .concept-intro { margin-bottom: 56px; }
   .blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 44px 48px; }
@@ -297,13 +292,12 @@
     .nav-side { display: none; }
     .logo { grid-column: 2; justify-self: center; width: 104px; height: 104px; }
     .logo img { width: 86px; }
-    .site-header.is-stuck .logo { transform: scale(.66) translateY(-20px); }
     .menu-toggle { display: block; grid-column: 3; }
     .menu-toggle.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
     .menu-toggle.open span:nth-child(2) { opacity: 0; }
     .menu-toggle.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
     .mobile-nav {
-      display: grid; position: fixed; inset: 68px 0 auto 0; z-index: 40;
+      display: grid; position: absolute; top: 68px; left: 0; right: 0; z-index: 40;
       background: var(--bg); border-bottom: 1px solid var(--line);
       padding: 56px var(--gutter) 32px; gap: 4px;
       transform: translateY(-110%); transition: transform .45s var(--ease); visibility: hidden;
@@ -369,7 +363,6 @@
   <a href="#faq">FAQ</a>
   <a href="#kontakt" class="btn">Probestunde anfragen</a>
 </nav>
-<div id="sentinel" aria-hidden="true" style="position:absolute;top:0;height:8px;width:1px"></div>
 
 <main>
 
@@ -623,11 +616,6 @@
 </footer>
 
 <script>
-  // Header-Zustand per IntersectionObserver (kein Scroll-Listener)
-  const header = document.querySelector('.site-header');
-  new IntersectionObserver(([e]) => header.classList.toggle('is-stuck', !e.isIntersecting))
-    .observe(document.getElementById('sentinel'));
-
   // Mobile Navigation
   const toggle = document.getElementById('menuToggle');
   const mnav = document.getElementById('mobileNav');
