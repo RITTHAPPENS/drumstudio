@@ -33,7 +33,7 @@
     "addressRegion": "Rheinland-Pfalz",
     "addressCountry": "DE"
   },
-  "areaServed": ["Koblenz", "Lahnstein", "Weißenthurm", "Mülheim-Kärlich", "Oberfell"],
+  "areaServed": "Koblenz",
   "founder": { "@type": "Person", "name": "Timo Liebschner", "jobTitle": "Schlagzeuglehrer" },
   "priceRange": "85-128 EUR pro Monat"
 }
@@ -150,7 +150,8 @@
   /* Hero */
   .hero { padding: clamp(64px, 7vw, 96px) 0 clamp(64px, 8vw, 112px); }
   .hero .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
-  .hero h1 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 28px; }
+  .hero h1 { font-size: clamp(40px, 5.6vw, 76px); line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 20px; }
+  .hero .slogan { font-size: clamp(20px, 1.9vw, 26px); font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 18px; max-width: none; }
   .hero h1 span { display: block; color: var(--ink-faint); }
   .hero p { font-size: clamp(19px, 1.6vw, 22px); line-height: 1.5; max-width: 32ch; }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
@@ -161,13 +162,13 @@
   .tint { background: var(--bg-alt); }
 
   /* Unterrichtskonzept: Sticky-Bild + Bausteine */
-  .concept .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); }
-  .concept-media { position: sticky; top: 32px; align-self: start; }
+  .concept .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+  .concept-media { align-self: center; }
   .concept-media img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; filter: grayscale(1) contrast(1.04); }
-  .concept-intro { margin-bottom: 56px; }
+  .concept-intro { margin-bottom: 40px; }
   .blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 44px 48px; }
   .block p { font-size: 17px; }
-  .block h3 { padding-top: 18px; border-top: 1px solid var(--ink); }
+  .block:nth-child(n+3) { padding-top: 32px; border-top: 1px solid var(--line); }
 
   /* Stimmen: ein großes + zwei kleine Zitate */
   .voices-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px; margin-top: 16px; }
@@ -181,6 +182,8 @@
 
   /* Über mich: Text + Porträt mit Eckdaten */
   .about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 7vw, 112px); align-items: start; }
+  .about-title { margin-bottom: 48px; max-width: none; }
+  .about-title span { display: block; color: var(--ink-faint); }
   .about-text p:first-child { color: var(--ink); font-size: 21px; line-height: 1.55; }
   .about-aside { display: grid; gap: 36px; }
   .about-aside img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; filter: grayscale(1) contrast(1.05); }
@@ -198,12 +201,8 @@
   .gallery figure { margin: 0; overflow: hidden; background: var(--bg-alt); }
   .gallery figure:hover img { transform: scale(1.03); }
   .g1 { grid-column: 1 / 8; grid-row: 1 / 3; }
-  .g2 { grid-column: 8 / 13; grid-row: 1 / 2; }
-  .g3 { grid-column: 8 / 10; grid-row: 2 / 3; }
-  .g4 { grid-column: 10 / 13; grid-row: 2 / 3; }
-  .online-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); align-items: center; margin-top: 56px; }
-  .online-row img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; filter: grayscale(1) contrast(1.04); }
-  .online-row h3 { font-size: 26px; margin-bottom: 12px; }
+  .g3 { grid-column: 8 / 13; grid-row: 1 / 2; }
+  .g4 { grid-column: 8 / 13; grid-row: 2 / 3; }
 
   /* Preise */
   .price-groups { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); margin-top: 48px; }
@@ -219,6 +218,9 @@
   .price-tile--dark .amount, .price-tile--dark .what { color: var(--bg); }
   .price-tile--dark .amount small { color: #B5B5AE; }
   .price-note { font-size: 15px; color: var(--ink-faint); margin-top: 20px; }
+  .extra { margin-top: clamp(48px, 6vw, 72px); padding: clamp(28px, 3.5vw, 44px); background: var(--bg); display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 24px clamp(32px, 5vw, 72px); align-items: center; }
+  .extra h3 { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 10px; }
+  .extra .price-tile { background: var(--bg-alt); }
   .trial { margin-top: clamp(56px, 7vw, 88px); padding-top: 40px; border-top: 1px solid var(--ink); display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px 48px; }
   .trial h3 { font-size: clamp(26px, 2.6vw, 34px); letter-spacing: -0.01em; margin-bottom: 10px; }
 
@@ -311,21 +313,22 @@
   @media (max-width: 767px) {
     body { font-size: 17px; }
     .hero { padding-top: 88px; }
-    .hero .wrap, .concept .wrap, .voices-grid, .about-grid, .price-groups, .faq-grid, .contact-grid, .online-row { grid-template-columns: minmax(0, 1fr); }
+    .hero .wrap, .concept .wrap, .voices-grid, .about-grid, .price-groups, .faq-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); }
     .hero-photo { aspect-ratio: 1 / 1; }
     .hero h1 { font-size: clamp(36px, 10vw, 48px); }
     .concept-media { position: static; }
     .concept-media img { aspect-ratio: 4 / 3; }
-    .blocks { grid-template-columns: 1fr; gap: 32px; }
+    .blocks { grid-template-columns: 1fr; gap: 28px; }
+    .block:nth-child(n+2) { padding-top: 28px; border-top: 1px solid var(--line); }
     .about-aside { order: -1; }
     .about-aside img { aspect-ratio: 1 / 1; }
-    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 160px 160px; gap: 8px; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 180px; gap: 8px; }
     .g1 { grid-column: 1 / 3; grid-row: 1 / 2; }
-    .g2 { grid-column: 1 / 2; grid-row: 2 / 4; }
-    .g3 { grid-column: 2 / 3; grid-row: 2 / 3; }
-    .g4 { grid-column: 2 / 3; grid-row: 3 / 4; }
+    .g3 { grid-column: 1 / 2; grid-row: 2 / 3; }
+    .g4 { grid-column: 2 / 3; grid-row: 2 / 3; }
     .price-tile { padding: 20px 16px 18px; }
     .trial { align-items: start; flex-direction: column; }
+    .extra { grid-template-columns: 1fr; padding: 24px 20px; }
     form.contact-form { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
     .footer-grid img { order: -1; }
@@ -339,7 +342,7 @@
   <div class="header-grid">
     <nav class="nav-side" aria-label="Hauptnavigation links">
       <a href="#unterricht">Unterricht</a>
-      <a href="#ueber-mich">Über mich</a>
+      <a href="#ueber-mich">Unser Lehrer</a>
       <a href="#einblicke">Einblicke</a>
     </nav>
     <a href="#top" class="logo" aria-label="DRUMSTUDIO KOBLENZ, zum Seitenanfang">
@@ -357,7 +360,7 @@
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
   <a href="#unterricht">Unterricht</a>
-  <a href="#ueber-mich">Über mich</a>
+  <a href="#ueber-mich">Unser Lehrer</a>
   <a href="#einblicke">Einblicke</a>
   <a href="#preise">Preise</a>
   <a href="#faq">FAQ</a>
@@ -371,6 +374,7 @@
     <div class="wrap">
       <div class="reveal">
         <h1 id="hero-title">Schlagzeug&shy;unterricht <span>in Koblenz</span></h1>
+        <p class="slogan">Die Schlagzeugschule im Drums Only Koblenz</p>
         <p>Einzelunterricht für Kinder ab 7, Jugendliche und Erwachsene. Vom ersten Groove bis zum fortgeschrittenen Spiel.</p>
         <div class="hero-ctas">
           <a href="#kontakt" class="btn">Probestunde anfragen</a>
@@ -391,34 +395,24 @@
       </div>
       <div>
         <div class="concept-intro reveal">
-          <h2 id="unterricht-title">Unterricht, der musikalisch beginnt</h2>
-          <p>Schlagzeugspielen bedeutet mehr als Grooves und Fills zu lernen. Timing, Sound, Technik und musikalisches Verständnis gehören zusammen, und genau diese Bereiche entwickeln wir im Unterricht Schritt für Schritt.</p>
-          <p>Dabei geht es von Anfang an darum, Musik zu machen. Neue Techniken und rhythmische Grundlagen werden nicht isoliert gelernt, sondern möglichst schnell in Grooves, Songs und musikalischen Situationen angewendet. Anfänger erhalten einen klaren und verständlichen Aufbau, bei fortgeschrittenen Spielern arbeiten wir gezielt an persönlichen Schwerpunkten.</p>
+          <h2 id="unterricht-title">Unterrichtsinhalte</h2>
         </div>
         <div class="blocks">
           <div class="block reveal">
             <h3>Groove &amp; Timing</h3>
-            <p>Ein stabiles Timing und ein gutes Gefühl für Puls und Groove bilden die Grundlage des Schlagzeugspiels. Dabei geht es nicht nur darum, rhythmisch korrekt zu spielen, sondern einen Groove musikalisch zu gestalten.</p>
+            <p>Entwickle ein sicheres Rhythmusgefühl und lerne, Grooves nicht nur richtig, sondern auch musikalisch zu spielen.</p>
           </div>
           <div class="block reveal">
-            <h3>Technik &amp; Dynamik</h3>
-            <p>Hand- und Fußtechnik, Bewegungsabläufe und die bewusste Kontrolle der Dynamik werden systematisch entwickelt. Immer mit dem Ziel, Technik musikalisch einsetzen zu können.</p>
+            <h3>Technik &amp; Sound</h3>
+            <p>Verbessere deine Hand- und Fußtechnik und entdecke, wie du mit Dynamik und Anschlag deinen eigenen Sound gestaltest.</p>
           </div>
           <div class="block reveal">
-            <h3>Sound &amp; Balance</h3>
-            <p>Ein guter Schlagzeugsound entsteht nicht nur durch das Instrument. Anschlag, Dynamik und eine ausgewogene Lautstärkebalance innerhalb des Drumsets werden von Anfang an bewusst entwickelt.</p>
+            <h3>Songs &amp; Musikstile</h3>
+            <p>Spiele deine Lieblingssongs! Von Pop und Rock bis Funk, Jazz und Latin: Deine musikalischen Interessen stehen im Mittelpunkt.</p>
           </div>
           <div class="block reveal">
-            <h3>Songs &amp; Stilistik</h3>
-            <p>Pop und Rock bilden den Schwerpunkt. Je nach Interesse kommen Funk, Jazz, Shuffle, Latin und weitere Stilistiken dazu. Songs dienen dazu, musikalische Zusammenhänge direkt anzuwenden.</p>
-          </div>
-          <div class="block reveal">
-            <h3>Rhythmik &amp; Notenlesen</h3>
-            <p>Rhythmen verstehen und lesen zu können schafft Unabhängigkeit beim Erarbeiten neuer Musik. Notenlesen wird praxisnah vermittelt und direkt mit dem Spiel am Instrument verbunden.</p>
-          </div>
-          <div class="block reveal">
-            <h3>Individuelle Ziele</h3>
-            <p>Vom ersten Groove über das Spielen in einer Band bis zur gezielten Arbeit fortgeschrittener Drummer: Inhalte und Lerntempo richten sich nach Alter, Erfahrung und persönlichen Zielen.</p>
+            <h3>Dein Unterricht. Dein Tempo.</h3>
+            <p>Ob Anfänger oder Fortgeschrittener: Wir arbeiten an deinen persönlichen Zielen. Notenlesen, Rhythmik und musikalisches Verständnis entwickeln sich dabei ganz praxisnah.</p>
           </div>
         </div>
       </div>
@@ -432,41 +426,43 @@
       <div class="voices-grid">
         <figure class="voice voice--lead tint reveal">
           <blockquote>„Zitat folgt. Zwei bis drei Sätze über den Unterricht und was er bewirkt hat.“</blockquote>
-          <figcaption><strong>Name folgt</strong><span>Ehemaliger Schüler, heute Musical-Drummer (u. a. Starlight Express, Moulin Rouge)</span></figcaption>
+          <figcaption><strong>Christoph Helm</strong><span>Professioneller Schlagzeuger (u. a. Starlight Express, Moulin Rouge)</span></figcaption>
         </figure>
         <div class="voices-side">
           <figure class="voice tint reveal">
             <blockquote>„Zitat folgt.“</blockquote>
-            <figcaption><strong>Name folgt</strong><span>Uni-Dozentin aus Tübingen</span></figcaption>
+            <figcaption><strong>Marion Wetzel</strong><span>Schlagzeugdozentin an der Hochschule für Kirchenmusik in Tübingen</span></figcaption>
           </figure>
           <figure class="voice tint reveal">
             <blockquote>„Zitat folgt.“</blockquote>
-            <figcaption><strong>Name folgt</strong><span>Professioneller Drummer aus Berlin</span></figcaption>
+            <figcaption><strong>Christian Frey</strong><span>Ehemaliger Schüler und Vater eines aktuellen Schülers</span></figcaption>
           </figure>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Über mich -->
+  <!-- Unser Lehrer -->
   <section id="ueber-mich" class="tint" aria-labelledby="about-title">
-    <div class="wrap about-grid">
-      <div class="about-text reveal">
-        <h2 id="about-title">Über mich</h2>
-        <p>Seit 2008 arbeite ich professionell als Schlagzeuglehrer und Musiker und unterrichte Schüler unterschiedlichster Altersgruppen und Spielniveaus, vom Anfänger bis zum professionellen Musiker.</p>
-        <p>Meine musikalische Ausbildung begann Anfang der 2000er mit dem Professional Program der Modern Music School. Ihren prägenden Höhepunkt fand sie in Kalifornien: 2012 absolvierte ich am Musicians Institute (PIT) in Los Angeles meinen Abschluss im Bereich Drum Performance. Danach setzte ich meine Weiterbildung fort, unter anderem am Drumtrainer Berlin.</p>
-        <p>Neben der musikalischen Ausbildung habe ich an der damaligen Universität Koblenz-Landau (heute Universität Koblenz) Lehramt studiert und mit dem Ersten Staatsexamen abgeschlossen. Die pädagogischen Inhalte dieses Studiums und die Frage, wie Menschen unterschiedlich lernen, fließen bis heute in meinen Unterricht ein.</p>
-        <p>So verbinden sich langjährige Erfahrung als Schlagzeuglehrer, musikalische Praxis als Live- und Theatermusiker und ein fundierter pädagogischer Hintergrund. Abgestimmt auf dich und deine Ziele.</p>
-        <p class="teachers"><strong>Meine Lehrer und Dozenten</strong> waren unter anderem Rob Carson, Donny Gruendler, Chuck Flores, Chuck Silverman, Ed Roscetti, Ryan Brown und Dirk Erchinger.</p>
-      </div>
-      <div class="about-aside reveal">
-        <img src="assets/timo-liebschner-portrait.jpg" alt="Porträt von Timo Liebschner, Schlagzeuglehrer in Koblenz" loading="lazy" width="1079" height="1457">
-        <dl class="creds">
-          <div><dt>Seit 2008</dt><dd>Schlagzeuglehrer und Musiker</dd></div>
-          <div><dt>Musicians Institute</dt><dd>Drum Performance, Los Angeles</dd></div>
-          <div><dt>Lehramt</dt><dd>Erstes Staatsexamen, Uni Koblenz</dd></div>
-          <div><dt>Live &amp; Theater</dt><dd>Erfahrung auf der Bühne</dd></div>
-        </dl>
+    <div class="wrap">
+      <h2 id="about-title" class="about-title reveal">Unser Lehrer <span>Timo Liebschner</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Timo arbeitet seit 2008 professionell als Schlagzeuglehrer und Musiker und unterrichtet Schüler unterschiedlichster Altersgruppen und Spielniveaus, vom Anfänger bis zum professionellen Musiker.</p>
+          <p>Seine musikalische Ausbildung begann Anfang der 2000er mit dem Professional Program der Modern Music School. Ihren prägenden Höhepunkt fand sie in Kalifornien: 2012 schloss er am Musicians Institute (PIT) in Los Angeles sein Studium in Music Performance im Fach Schlagzeug ab. Danach setzte er seine Weiterbildung fort, unter anderem am Drumtrainer Berlin.</p>
+          <p>Neben der musikalischen Ausbildung hat Timo an der damaligen Universität Koblenz-Landau (heute Universität Koblenz) Lehramt studiert und mit dem Ersten Staatsexamen abgeschlossen. Die pädagogischen Inhalte dieses Studiums und die Frage, wie Menschen unterschiedlich lernen, fließen bis heute in seinen Unterricht ein.</p>
+          <p>So verbinden sich langjährige Erfahrung als Schlagzeuglehrer, musikalische Praxis als Live- und Theatermusiker und ein fundierter pädagogischer Hintergrund. Abgestimmt auf dich und deine Ziele.</p>
+          <p class="teachers"><strong>Seine Lehrer und Dozenten</strong> waren unter anderem Rob Carson, Donny Gruendler, Chuck Flores, Chuck Silverman, Ed Roscetti, Ryan Brown und Dirk Erchinger.</p>
+        </div>
+        <div class="about-aside reveal">
+          <img src="assets/timo-liebschner-portrait.jpg" alt="Porträt von Timo Liebschner, Schlagzeuglehrer in Koblenz" loading="lazy" width="1079" height="1457">
+          <dl class="creds">
+            <div><dt>Seit 2008</dt><dd>Schlagzeuglehrer und Musiker</dd></div>
+            <div><dt>Musicians Institute (PIT)</dt><dd>Music Performance im Fach Schlagzeug, Los Angeles</dd></div>
+            <div><dt>Lehramt</dt><dd>Erstes Staatsexamen, Uni Koblenz</dd></div>
+            <div><dt>Live &amp; Theater</dt><dd>Erfahrung auf der Bühne</dd></div>
+          </dl>
+        </div>
       </div>
     </div>
   </section>
@@ -476,20 +472,12 @@
     <div class="wrap">
       <div class="gallery-head reveal">
         <h2 id="einblicke-title">Einblicke</h2>
-        <p>Unterrichtet wird in den professionell ausgestatteten Räumen von Drums Only in Koblenz-Lützel. Akustisches Schlagzeugspiel ist hier problemlos möglich.</p>
+        <p>Unterrichtet wird in den professionell ausgestatteten Räumen von Drums Only in Koblenz-Lützel. Akustisches Schlagzeugspiel ist hier problemlos möglich. Zusätzlich gibt es Online-Unterricht mit mehreren Kameraperspektiven.</p>
       </div>
       <div class="gallery">
         <figure class="g1 reveal"><img src="assets/schlagzeugunterricht-koblenz-zwei-sets.jpg" alt="Unterrichtsraum für Schlagzeugunterricht in Koblenz mit zwei Drumsets" loading="lazy"></figure>
-        <figure class="g2 reveal"><img src="assets/ludwig-drumset-unterricht.jpg" alt="Ludwig-Drumset am Fenster im Unterrichtsraum" loading="lazy" style="object-position: 50% 62%"></figure>
         <figure class="g3 reveal"><img src="assets/drumset-unterrichtsraum.jpg" alt="Blick vom Schlagzeughocker auf das Drumset" loading="lazy"></figure>
         <figure class="g4 reveal"><img src="assets/unterrichtsraum-drumstudio-koblenz.jpg" alt="Becken und Sticks im Unterrichtsraum" loading="lazy"></figure>
-      </div>
-      <div class="online-row">
-        <img class="reveal" src="assets/studio-online-unterricht.jpg" alt="Studio-Setup mit Mikrofonen für Online-Schlagzeugunterricht" loading="lazy">
-        <div class="reveal">
-          <h3>Auch online möglich</h3>
-          <p>Zusätzlich zum Präsenzunterricht in Koblenz gibt es Online-Unterricht. Dafür steht ein voll ausgestattetes Setup mit mehreren Kameraperspektiven zur Verfügung.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -515,9 +503,21 @@
           <div class="price-tiles price-tiles--2">
             <div class="price-tile"><span class="amount">140 €</span><span class="what">5er-Karte, 30 Minuten</span></div>
             <div class="price-tile"><span class="amount">210 €</span><span class="what">5er-Karte, 45 Minuten</span></div>
-            <div class="price-tile"><span class="amount">280 €</span><span class="what">10er-Karte, 30 Minuten</span></div>
-            <div class="price-tile"><span class="amount">420 €</span><span class="what">10er-Karte, 45 Minuten</span></div>
+            <div class="price-tile"><span class="amount">270 €</span><span class="what">10er-Karte, 30 Minuten</span></div>
+            <div class="price-tile"><span class="amount">405 €</span><span class="what">10er-Karte, 45 Minuten</span></div>
           </div>
+          <p class="price-note">Mit der 10er-Karte sparst du gegenüber zwei 5er-Karten jeweils rund 3,57 %.</p>
+        </div>
+      </div>
+      <div class="extra reveal">
+        <div>
+          <h3>Mehr Unterricht, wenn du ihn brauchst</h3>
+          <p>Ein Auftritt steht bevor oder du möchtest gezielt an deiner Technik arbeiten? Mit den vergünstigten 5er-Karten buchst du flexibel zusätzliche Stunden, ohne deinen bestehenden Vertrag zu verändern.</p>
+          <p class="price-note">Nur in Kombination mit einem bestehenden Unterrichtsvertrag erhältlich.</p>
+        </div>
+        <div class="price-tiles price-tiles--2">
+          <div class="price-tile"><span class="amount">108 €</span><span class="what">5 × 30 Minuten</span></div>
+          <div class="price-tile"><span class="amount">162 €</span><span class="what">5 × 45 Minuten</span></div>
         </div>
       </div>
       <div class="trial reveal">
@@ -558,7 +558,7 @@
         <div class="place">
           <strong>Drums Only</strong>
           <address>Andernacher Straße 90<br>56070 Koblenz-Lützel</address>
-          <p class="reach">Parkplätze vor Ort, Bushaltestelle direkt gegenüber, Bahnhof Koblenz-Lützel in wenigen Gehminuten. Schüler kommen aus ganz Koblenz und Umgebung, etwa aus Lahnstein, Weißenthurm, Mülheim-Kärlich und Oberfell.</p>
+          <p class="reach">Parkplätze vor Ort, Bushaltestelle direkt gegenüber, Bahnhof Koblenz-Lützel in wenigen Gehminuten. Unsere Schüler kommen aus der gesamten Region um Koblenz.</p>
         </div>
       </div>
 
